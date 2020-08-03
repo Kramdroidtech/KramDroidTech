@@ -23,53 +23,107 @@ img{
 }
 
 //Code Start
+.main{
+    height: 100vh;
 
-.header{
-    position: fixed;
-    width: 100%;
-    height: 80px;
-
-    /*Layout*/
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 100px 1fr;
+    grid-auto-rows: 1fr;
 
-    .mylogo img{
-        height: 80px;
-        width: auto;
-        margin: 10px 15px;
+    // Start Header
+    .header{
+        width: 100%;
+        height: 100px;
+        position: fixed;
+        margin: 0 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .mylogo{
+            height: 80px;
+            width: 80px;
+        }
+        .toggle-btn{
+            display: none;
+        }
+        .menu{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            a{
+                margin-left: 30px;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 0.7em;
+                color: white;
+                transition: all .2s ease;
+                cursor: pointer;
+
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                &::after{
+                    content: '';
+                    width: 100%;
+                    height: 3px;
+                    background: red;
+                    transform: scale(0,1);
+                    transition: all .4s ease;
+                }
+                &:hover::after{
+                    transform: scale(1);
+                }
+            }
+        }
     }
+    // End Of Header
+    
+    // Start Of Landing Page
+    .landing-page{
+        height: 100vh;
+        background: linear-gradient(rgba(0,0,0,0.8)) ,url('../img/KRAMDROID.jpg') no-repeat center center / cover;
+        line-height: 40px;
 
-    span{
-        display: none;
-    }
+        display: flex;
+        align-items: center;
 
-    ul{
-        width: 60%;
-        
+        .introText{
+            margin-left: 30px;
 
-        /*Layout*/
-        align-items: start;
-        justify-self: center;
+            h1{
+                color: white;
+                font-size: 2.5rem;
+                font-weight: 400;
 
-        display: grid;
-        grid-auto-flow: column;
-        place-items: center;
+                span{
+                    color: red;
+                }
+            }
+            h2{
+                color: white;
+                font-weight: 400;
+                font-size: 1.5rem;
+            }
+            a{
+                color: white;
+                border: solid 1px red;
+                margin-top: 20px;
+                padding: 10px 20px;
+                border-radius: 15px;
+                transition: all .3s linear;
 
-        a{
-            color: white;
-           text-transform: uppercase;
-           font-weight: 600;
-           font-size: 0.9rem;
-           cursor: pointer;
+                &:hover{
+                    background: red;
+                }
+            }
+        }
+
+        .scroll-btn{
+            
         }
     }
 }
-.landing-page{
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.5)), url("/assets/img/KRAMDROID.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
+
