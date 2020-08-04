@@ -34,7 +34,9 @@ img{
         width: 100%;
         height: 100px;
         position: fixed;
-        margin: 0 20px;
+        margin: 0;
+        transition: all 1s ease;
+        z-index: 2;
 
         display: flex;
         align-items: center;
@@ -79,6 +81,48 @@ img{
             }
         }
     }
+
+    .header.startScroll{
+        height: 60px;
+        width: 100%;
+        background: white;
+
+        .mylogo{
+            width: 70px;
+            height: 70px;
+        }
+        .menu{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            a{
+                margin-left: 30px;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 0.6em;
+                color: black;
+                transition: all .2s ease;
+                cursor: pointer;
+
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                &::after{
+                    content: '';
+                    width: 100%;
+                    height: 3px;
+                    background: red;
+                    transform: scale(0,1);
+                    transition: all .4s ease;
+                }
+                &:hover::after{
+                    transform: scale(1);
+                }
+            }
+        }
+    }
     // End Of Header
     
     // Start Of Landing Page
@@ -92,6 +136,7 @@ img{
 
         .introText{
             margin-left: 30px;
+            flex: 1;
 
             h1{
                 color: white;
@@ -122,8 +167,129 @@ img{
         }
 
         .scroll-btn{
-            
+            flex: 1;
+            align-self: flex-end;
+            position: relative;
+
+            .scroll{
+                position: absolute;
+                bottom: 20px;
+
+                i{
+                    color: red;
+                    font-size: 2rem;
+                    background: white;
+                    border-radius: 50%;
+                    animation: updown 0.5s infinite;
+                    
+
+                    @keyframes updown{
+                        from{
+                            transform: translateY(1);
+                        }
+                        to{
+                            transform: translateY(-10px);
+                        }
+                    }
+                }
+            }
         }
+    }
+    // End Of Landing Page
+
+    .about-section{
+        height: 100vh;
+        background: linear-gradient(rgba(0,0,0,0.8)) ,url('../img/aboutme.jpg') no-repeat center center / cover;
+        overflow: hidden;
+
+        .section-title{
+            text-align: center;
+            color: white;
+            text-transform: uppercase;
+            margin-top: 30px;
+            font-size: 1.5rem;
+            text-decoration: underline;
+        }
+        .about-container{
+            height: 80vh;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+
+            .about-image{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex: 1;
+                padding: 60px;
+                z-index: 1;
+
+                //for animation (down to up)
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(200px);
+                transition: all 1s ease;
+            }
+            //animation
+            .about-image.showDownUp{
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0);
+            }
+
+            .about-content{
+                flex: 1;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                color: white;
+                padding: 10px 15px;
+
+                 //for animation (up to down)
+                 opacity: 0;
+                 pointer-events: none;
+                 transform: translateY(-150px);
+                 transition: all 1s ease;
+
+                h1{
+                    text-align: center;
+                    line-height: 80px;
+                    font-size: 2.5rem;
+                }
+                p{
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                }
+                a{
+                    color: white;
+                    border: solid 1px red;
+                    margin-top: 20px;
+                    padding: 10px 20px;
+                    border-radius: 15px;
+                    transition: all .3s linear;
+    
+                    &:hover{
+                        background: red;
+                    }
+                }
+            }
+            //animation
+            .about-content.showUpDown{
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    .all-video{
+        height: 100vh;
+        background: blue;
     }
 }
 
