@@ -9,6 +9,10 @@
 $primary_color:#222;
 $secondary_color:#fff;
 
+html{
+    scroll-behavior: smooth;
+}
+
 //Utilities
 a{
     text-decoration: none;
