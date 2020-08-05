@@ -9,12 +9,12 @@ window.addEventListener('DOMContentLoaded',()=>{
 });
 
 window.addEventListener('scroll',()=>{
-      trying();
+      animateHeader();
       animate();
 });
 
 //Animations
-const trying =()=>{
+const animateHeader =()=>{
     if(scrollY > 20){
         header.classList.add('startScroll');
     }else{
@@ -33,4 +33,5 @@ const animate = ()=>{
         aboutImage.classList.remove('showDownUp');
         aboutContent.classList.remove('showUpDown');
     }
+
 }
