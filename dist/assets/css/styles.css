@@ -317,9 +317,9 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 450px;
+          flex: 0 0 450px;
   padding: 60px;
   z-index: 1;
   opacity: 0;
@@ -368,11 +368,11 @@ img {
 .main .about-section .about-container .about-content h1 {
   text-align: center;
   line-height: 80px;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .main .about-section .about-container .about-content p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -398,7 +398,7 @@ img {
 }
 
 .main .services-section {
-  height: 70vh;
+  height: 60vh;
   width: 100%;
   background: #222;
 }
@@ -489,5 +489,188 @@ img {
   font-size: 0.8rem;
   color: white;
   font-weight: 400;
+}
+
+.main .contact-section {
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url("/dist/assets/img/contacts.jpg") no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5)), url("/dist/assets/img/contacts.jpg") no-repeat center center/cover;
+  position: relative;
+}
+
+.main .contact-section .contacts {
+  height: 90vh;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main .contact-section .contacts .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  max-width: 100%;
+  margin-bottom: 15px;
+}
+
+.main .contact-section .contacts .item i {
+  color: black;
+  background: red;
+  font-size: 1.3rem;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.main .contact-section .contacts .item p {
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.main .contact-section .contacts .item p:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.main .contact-section .contacts .contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .contact-section .contacts .contact-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main .contact-section .contacts .contact-form form input[type="email"], .main .contact-section .contacts .contact-form form input[type="text"], .main .contact-section .contacts .contact-form form textarea {
+  width: 100%;
+  border: white solid 1px;
+  background: black;
+  padding: 10px 20px;
+  margin: 10px;
+  color: white;
+}
+
+.main .contact-section .contacts .contact-form form textarea {
+  resize: vertical;
+  height: 200px;
+}
+
+.main .contact-section .contacts .contact-form form input[type="submit"] {
+  width: 100%;
+  height: 30px;
+  background: black;
+  color: white;
+  border: solid 2px black;
+  cursor: pointer;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+.main .contact-section .contacts .contact-form form input[type="submit"]:hover {
+  background: none;
+  color: white;
+}
+
+.main .footer {
+  height: 20vh;
+  width: 100vw;
+  background: #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main .footer .item {
+  color: white;
+}
+
+.main .footer .item h1 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.main .footer .item .social-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 20px;
+}
+
+.main .footer .item .social-icons i {
+  color: white;
+  background: black;
+  padding: 10px;
+  border-radius: 50%;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.main .footer .item .social-icons i:hover {
+  background: red;
+  cursor: pointer;
+  -webkit-animation: beating 0.5s infinite;
+          animation: beating 0.5s infinite;
+}
+
+@-webkit-keyframes beating {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes beating {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 /*# sourceMappingURL=styles.css.map */
