@@ -70,10 +70,6 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -671,6 +667,75 @@ img {
   to {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
+  }
+}
+
+@media (min-width: 411px) and (max-width: 500px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header .mylogo {
+    height: 100px;
+    width: 100px;
+  }
+  .header .toggle-btn {
+    display: block;
+  }
+  .header .toggle-btn span {
+    color: white;
+    cursor: pointer;
+  }
+  .header .menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header .menu a {
+    margin-left: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.7em;
+    color: white;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header .menu a::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: red;
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+  }
+  .header .menu a:hover::after {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 /*# sourceMappingURL=styles.css.map */
