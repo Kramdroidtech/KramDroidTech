@@ -1,0 +1,39 @@
+.footer{
+    @include widthHeight(100vw,20vh);
+    background: #111;
+    @include flexDisplay(center,space-around,row);
+
+    .item{
+        color: white;
+
+        h1{
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .social-icons{
+            @include flexDisplay(start,space-around,row);
+            margin-top: 20px;
+            i{
+                color: white;
+                background: black;
+                padding: 10px;
+                border-radius: 50%;
+                transition: 0.3s ease;
+
+                &:hover{
+                    background: red;
+                    cursor: pointer;
+                    animation: beating 0.5s infinite;
+                }
+                @keyframes beating{
+                    from{
+                       transform: scale(1);
+                    }
+                    to{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}

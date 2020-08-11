@@ -1,0 +1,80 @@
+.about-section{
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.9)) ,url('../img/aboutme.jpg') no-repeat center center / cover;
+    overflow: hidden;
+
+    .section-title{
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+        margin-top: 30px;
+        font-size: 1.5rem;
+        text-decoration: underline;
+    }
+    .about-container{
+        @include widthHeight(100%,80vh);
+        @include flexDisplay(center,space-around,row);
+        flex-wrap: wrap;
+
+        .about-image{
+            @include flexDisplay(center,center,row);
+            flex: 0 0 450px;
+            padding: 60px;
+            z-index: 1;
+
+            //for animation (down to up)
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(200px);
+            transition: all 1s ease;
+        }
+        //animation
+        .about-image.showDownUp{
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+
+        .about-content{
+            flex: 1;
+            @include flexDisplay(center,center,column);
+            text-align: center;
+            color: white;
+            padding: 10px 15px;
+
+             //for animation (up to down)
+             opacity: 0;
+             pointer-events: none;
+             transform: translateY(-150px);
+             transition: all 1s ease;
+
+            h1{
+                text-align: center;
+                line-height: 80px;
+                font-size: 2rem;
+            }
+            p{
+                font-size: 1rem;
+                font-weight: 400;
+            }
+            a{
+                color: white;
+                border: solid 1px red;
+                margin-top: 20px;
+                padding: 10px 20px;
+                border-radius: 15px;
+                transition: all .3s linear;
+
+                &:hover{
+                    background: red;
+                }
+            }
+        }
+        //animation
+        .about-content.showUpDown{
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+    }
+}

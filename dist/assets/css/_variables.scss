@@ -1,0 +1,16 @@
+// Variables
+$primary_color:#222;
+$secondary_color:#fff;
+
+
+//Mixins
+@mixin widthHeight($width,$height){
+    width: $width;
+    height: $height;
+}
+@mixin flexDisplay($align,$justiFy,$colRow){
+    display:flex;
+    align-items: $align;
+    justify-content: $justiFy;
+    flex-direction: $colRow;
+}

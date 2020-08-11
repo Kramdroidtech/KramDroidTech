@@ -1,3 +1,638 @@
+.header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  margin: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.header .mylogo {
+  height: 80px;
+  width: 80px;
+}
+
+.header .toggle-btn {
+  display: none;
+}
+
+.header .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .menu a {
+  margin-left: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.7em;
+  color: white;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header .menu a::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: red;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.header .menu a:hover::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.header.startScroll {
+  height: 60px;
+  width: 100%;
+  background: white;
+}
+
+.header.startScroll .mylogo {
+  width: 70px;
+  height: 70px;
+}
+
+.header.startScroll .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header.startScroll .menu a {
+  margin-left: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.6em;
+  color: black;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header.startScroll .menu a::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: red;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.header.startScroll .menu a:hover::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.landing-page {
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8))), url("../img/KRAMDROID.jpg") no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.8)), url("../img/KRAMDROID.jpg") no-repeat center center/cover;
+  line-height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.landing-page .introText {
+  margin-left: 30px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.landing-page .introText h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.landing-page .introText h1 span {
+  color: red;
+}
+
+.landing-page .introText h2 {
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.landing-page .introText a {
+  color: white;
+  border: solid 1px red;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.landing-page .introText a:hover {
+  background: red;
+}
+
+.landing-page .scroll-btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  position: relative;
+}
+
+.landing-page .scroll-btn .scroll {
+  position: absolute;
+  bottom: 20px;
+}
+
+.landing-page .scroll-btn .scroll i {
+  color: red;
+  font-size: 2rem;
+  background: white;
+  border-radius: 50%;
+  -webkit-animation: updown 0.5s infinite;
+          animation: updown 0.5s infinite;
+}
+
+@-webkit-keyframes updown {
+  from {
+    -webkit-transform: translateY(1);
+            transform: translateY(1);
+  }
+  to {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+
+@keyframes updown {
+  from {
+    -webkit-transform: translateY(1);
+            transform: translateY(1);
+  }
+  to {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+
+.about-section {
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9))), url("../img/aboutme.jpg") no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.9)), url("../img/aboutme.jpg") no-repeat center center/cover;
+  overflow: hidden;
+}
+
+.about-section .section-title {
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 30px;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+.about-section .about-container {
+  height: 80vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.about-section .about-container .about-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 450px;
+          flex: 0 0 450px;
+  padding: 60px;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(200px);
+          transform: translateY(200px);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.about-section .about-container .about-image.showDownUp {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.about-section .about-container .about-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 10px 15px;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(-150px);
+          transform: translateY(-150px);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.about-section .about-container .about-content h1 {
+  text-align: center;
+  line-height: 80px;
+  font-size: 2rem;
+}
+
+.about-section .about-container .about-content p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.about-section .about-container .about-content a {
+  color: white;
+  border: solid 1px red;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.about-section .about-container .about-content a:hover {
+  background: red;
+}
+
+.about-section .about-container .about-content.showUpDown {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.services-section {
+  height: 60vh;
+  width: 100%;
+  background: #222;
+}
+
+.services-section .all-services {
+  width: 80%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.services-section .all-services .services {
+  width: 220px;
+  margin: 10px;
+  padding: 35px 15px;
+  position: relative;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.services-section .all-services .services .service-logo {
+  border: solid 1px red;
+  width: 80px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: background 0.9s ease, -webkit-transform 0.5s ease;
+  transition: background 0.9s ease, -webkit-transform 0.5s ease;
+  transition: background 0.9s ease, transform 0.5s ease;
+  transition: background 0.9s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.services-section .all-services .services .service-logo i {
+  color: red;
+  font-size: 1.8rem;
+  padding: 15px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.services-section .all-services .services .service-logo:hover {
+  background: red;
+  -webkit-transform: rotate(45deg) scale(0.8);
+          transform: rotate(45deg) scale(0.8);
+}
+
+.services-section .all-services .services .service-logo:hover i {
+  color: white;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.services-section .all-services .services h1 {
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.services-section .all-services .services p {
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 400;
+}
+
+.contact-section {
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url("/dist/assets/img/contacts.jpg") no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5)), url("/dist/assets/img/contacts.jpg") no-repeat center center/cover;
+  position: relative;
+}
+
+.contact-section .contacts {
+  height: 90vh;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact-section .contacts .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  max-width: 100%;
+  margin-bottom: 15px;
+}
+
+.contact-section .contacts .item i {
+  color: black;
+  background: red;
+  font-size: 1.3rem;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.contact-section .contacts .item p {
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.contact-section .contacts .item p:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.contact-section .contacts .contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-section .contacts .contact-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact-section .contacts .contact-form form input[type="email"], .contact-section .contacts .contact-form form input[type="text"], .contact-section .contacts .contact-form form textarea {
+  width: 100%;
+  border: white solid 1px;
+  background: black;
+  padding: 10px 20px;
+  margin: 10px;
+  color: white;
+}
+
+.contact-section .contacts .contact-form form textarea {
+  resize: vertical;
+  height: 200px;
+}
+
+.contact-section .contacts .contact-form form input[type="submit"] {
+  width: 100%;
+  height: 30px;
+  background: black;
+  color: white;
+  border: solid 2px black;
+  cursor: pointer;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+.contact-section .contacts .contact-form form input[type="submit"]:hover {
+  background: none;
+  color: white;
+}
+
+.footer {
+  height: 20vh;
+  width: 100vw;
+  background: #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.footer .item {
+  color: white;
+}
+
+.footer .item h1 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.footer .item .social-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 20px;
+}
+
+.footer .item .social-icons i {
+  color: white;
+  background: black;
+  padding: 10px;
+  border-radius: 50%;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.footer .item .social-icons i:hover {
+  background: red;
+  cursor: pointer;
+  -webkit-animation: beating 0.5s infinite;
+          animation: beating 0.5s infinite;
+}
+
+@-webkit-keyframes beating {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes beating {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -37,637 +672,6 @@ img {
   display: -ms-grid;
   display: grid;
   grid-auto-rows: 1fr;
-}
-
-.main .header {
-  width: 100%;
-  height: 100px;
-  position: fixed;
-  margin: 0;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-  z-index: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.main .header .mylogo {
-  height: 80px;
-  width: 80px;
-}
-
-.main .header .toggle-btn {
-  display: none;
-}
-
-.main .header .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.main .header .menu a {
-  margin-left: 30px;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 0.7em;
-  color: white;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.main .header .menu a::after {
-  content: '';
-  width: 100%;
-  height: 3px;
-  background: red;
-  -webkit-transform: scale(0, 1);
-          transform: scale(0, 1);
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-}
-
-.main .header .menu a:hover::after {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
-.main .header.startScroll {
-  height: 60px;
-  width: 100%;
-  background: white;
-}
-
-.main .header.startScroll .mylogo {
-  width: 70px;
-  height: 70px;
-}
-
-.main .header.startScroll .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.main .header.startScroll .menu a {
-  margin-left: 30px;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 0.6em;
-  color: black;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.main .header.startScroll .menu a::after {
-  content: '';
-  width: 100%;
-  height: 3px;
-  background: red;
-  -webkit-transform: scale(0, 1);
-          transform: scale(0, 1);
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-}
-
-.main .header.startScroll .menu a:hover::after {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
-.main .landing-page {
-  height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8))), url("../img/KRAMDROID.jpg") no-repeat center center/cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.8)), url("../img/KRAMDROID.jpg") no-repeat center center/cover;
-  line-height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.main .landing-page .introText {
-  margin-left: 30px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.main .landing-page .introText h1 {
-  color: white;
-  font-size: 2.5rem;
-  font-weight: 400;
-}
-
-.main .landing-page .introText h1 span {
-  color: red;
-}
-
-.main .landing-page .introText h2 {
-  color: white;
-  font-weight: 400;
-  font-size: 1.5rem;
-}
-
-.main .landing-page .introText a {
-  color: white;
-  border: solid 1px red;
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  -webkit-transition: all .3s linear;
-  transition: all .3s linear;
-}
-
-.main .landing-page .introText a:hover {
-  background: red;
-}
-
-.main .landing-page .scroll-btn {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  position: relative;
-}
-
-.main .landing-page .scroll-btn .scroll {
-  position: absolute;
-  bottom: 20px;
-}
-
-.main .landing-page .scroll-btn .scroll i {
-  color: red;
-  font-size: 2rem;
-  background: white;
-  border-radius: 50%;
-  -webkit-animation: updown 0.5s infinite;
-          animation: updown 0.5s infinite;
-}
-
-@-webkit-keyframes updown {
-  from {
-    -webkit-transform: translateY(1);
-            transform: translateY(1);
-  }
-  to {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-}
-
-@keyframes updown {
-  from {
-    -webkit-transform: translateY(1);
-            transform: translateY(1);
-  }
-  to {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-}
-
-.main .about-section {
-  height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9))), url("../img/aboutme.jpg") no-repeat center center/cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.9)), url("../img/aboutme.jpg") no-repeat center center/cover;
-  overflow: hidden;
-}
-
-.main .about-section .section-title {
-  text-align: center;
-  color: white;
-  text-transform: uppercase;
-  margin-top: 30px;
-  font-size: 1.5rem;
-  text-decoration: underline;
-}
-
-.main .about-section .about-container {
-  height: 80vh;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.main .about-section .about-container .about-image {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 450px;
-          flex: 0 0 450px;
-  padding: 60px;
-  z-index: 1;
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transform: translateY(200px);
-          transform: translateY(200px);
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
-.main .about-section .about-container .about-image.showDownUp {
-  opacity: 1;
-  pointer-events: all;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-.main .about-section .about-container .about-content {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 10px 15px;
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transform: translateY(-150px);
-          transform: translateY(-150px);
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
-.main .about-section .about-container .about-content h1 {
-  text-align: center;
-  line-height: 80px;
-  font-size: 2rem;
-}
-
-.main .about-section .about-container .about-content p {
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.main .about-section .about-container .about-content a {
-  color: white;
-  border: solid 1px red;
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  -webkit-transition: all .3s linear;
-  transition: all .3s linear;
-}
-
-.main .about-section .about-container .about-content a:hover {
-  background: red;
-}
-
-.main .about-section .about-container .about-content.showUpDown {
-  opacity: 1;
-  pointer-events: all;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-.main .services-section {
-  height: 60vh;
-  width: 100%;
-  background: #222;
-}
-
-.main .services-section .all-services {
-  width: 80%;
-  margin: 0 auto;
-  overflow-x: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: no-wrap;
-      flex-wrap: no-wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.main .services-section .all-services .services {
-  width: 220px;
-  margin: 10px;
-  padding: 35px 15px;
-  position: relative;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.main .services-section .all-services .services .service-logo {
-  border: solid 1px red;
-  width: 80px;
-  height: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 10px;
-  cursor: pointer;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: background 0.9s ease, -webkit-transform 0.5s ease;
-  transition: background 0.9s ease, -webkit-transform 0.5s ease;
-  transition: background 0.9s ease, transform 0.5s ease;
-  transition: background 0.9s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
-}
-
-.main .services-section .all-services .services .service-logo i {
-  color: red;
-  font-size: 1.8rem;
-  padding: 15px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.main .services-section .all-services .services .service-logo:hover {
-  background: red;
-  -webkit-transform: rotate(45deg) scale(0.8);
-          transform: rotate(45deg) scale(0.8);
-}
-
-.main .services-section .all-services .services .service-logo:hover i {
-  color: white;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.main .services-section .all-services .services h1 {
-  font-size: 1.2rem;
-  color: white;
-  font-weight: 600;
-  padding: 10px;
-}
-
-.main .services-section .all-services .services p {
-  font-size: 0.8rem;
-  color: white;
-  font-weight: 400;
-}
-
-.main .contact-section {
-  height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url("/dist/assets/img/contacts.jpg") no-repeat center center/cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.5)), url("/dist/assets/img/contacts.jpg") no-repeat center center/cover;
-  position: relative;
-}
-
-.main .contact-section .contacts {
-  height: 90vh;
-  max-width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.main .contact-section .contacts .item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
-  max-width: 100%;
-  margin-bottom: 15px;
-}
-
-.main .contact-section .contacts .item i {
-  color: black;
-  background: red;
-  font-size: 1.3rem;
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.main .contact-section .contacts .item p {
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-}
-
-.main .contact-section .contacts .item p:hover {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-}
-
-.main .contact-section .contacts .contact-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.main .contact-section .contacts .contact-form form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.main .contact-section .contacts .contact-form form input[type="email"], .main .contact-section .contacts .contact-form form input[type="text"], .main .contact-section .contacts .contact-form form textarea {
-  width: 100%;
-  border: white solid 1px;
-  background: black;
-  padding: 10px 20px;
-  margin: 10px;
-  color: white;
-}
-
-.main .contact-section .contacts .contact-form form textarea {
-  resize: vertical;
-  height: 200px;
-}
-
-.main .contact-section .contacts .contact-form form input[type="submit"] {
-  width: 100%;
-  height: 30px;
-  background: black;
-  color: white;
-  border: solid 2px black;
-  cursor: pointer;
-  -webkit-transition: all .3s ease-in;
-  transition: all .3s ease-in;
-}
-
-.main .contact-section .contacts .contact-form form input[type="submit"]:hover {
-  background: none;
-  color: white;
-}
-
-.main .footer {
-  height: 20vh;
-  width: 100vw;
-  background: #111;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.main .footer .item {
-  color: white;
-}
-
-.main .footer .item h1 {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-}
-
-.main .footer .item .social-icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-top: 20px;
-}
-
-.main .footer .item .social-icons i {
-  color: white;
-  background: black;
-  padding: 10px;
-  border-radius: 50%;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-
-.main .footer .item .social-icons i:hover {
-  background: red;
-  cursor: pointer;
-  -webkit-animation: beating 0.5s infinite;
-          animation: beating 0.5s infinite;
-}
-
-@-webkit-keyframes beating {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  to {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-}
-
-@keyframes beating {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  to {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
 }
 
 @media (min-width: 411px) and (max-width: 500px) {
