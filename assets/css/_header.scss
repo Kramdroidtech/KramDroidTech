@@ -6,7 +6,7 @@
     transition: all 1s ease;
     z-index: 2;
 
-    @include flexDisplay(center,space-around);
+    @include flexDisplay(center,space-around,row);
 
     .mylogo{
         @include widthHeight(80px,80px);
