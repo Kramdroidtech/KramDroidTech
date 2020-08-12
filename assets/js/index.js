@@ -35,6 +35,18 @@ window.addEventListener('DOMContentLoaded',()=>{
         animateHeader();
         animateAbout();
   });
+
+    
+    const navigationBar = () => {
+        const toggleBtn = document.querySelector('.toggle-btn');
+        const navigation = document.querySelector('.menu');
+
+        toggleBtn.addEventListener('click',() => {
+            navigation.classList.toggle('showMenu');
+        });
+    }
+
+    navigationBar();
 });
 
 
