@@ -1,61 +1,63 @@
-.services-section{
-    @include widthHeight(100%,60vh);
-    background: #222;
+.services-section {
+  @include widthHeight(100%, 60vh);
+  background: #222;
+  overflow: hidden;
 
-    .all-services{
-        width: 80%;
-        margin: 0 auto;
-        overflow-x: hidden;
-        @include flexDisplay(start,center,row);
-        flex-wrap: no-wrap;
+  .all-services {
+    width: 80%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    @include flexDisplay(start, center, row);
+    flex-wrap: no-wrap;
 
-        .services{
-            width: 220px;
-            margin: 10px;
-            padding: 35px 15px;
-            position: relative;
-            text-align: center;
-            @include flexDisplay(center,start,column);
+    .services {
+      width: 220px;
+      margin: 10px;
+      padding: 35px 15px;
+      position: relative;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-flow: row wrap;
 
-            .service-logo{
-                @include widthHeight(80px,80px);
-                border: solid 1px red;
-                @include flexDisplay(center,center,row);
-                margin-bottom: 10px;
-                cursor: pointer;
-                transform: scale(1);
-                transition: background 0.9s ease,
-                            transform 0.5s ease
-                ;
+      .service-logo {
+        @include widthHeight(80px, 80px);
+        border: solid 1px red;
+        @include flexDisplay(center, center, row);
+        margin-bottom: 10px;
+        cursor: pointer;
+        transform: scale(1);
+        transition: background 0.9s ease, transform 0.5s ease;
 
-                i{
-                    color: red;
-                    font-size: 1.8rem;
-                    padding: 15px;
-                    transition: all 0.5s ease;
-                }
-
-                &:hover{
-                    background: red;
-                    transform: rotate(45deg) scale(0.8);
-
-                    i{
-                        color: white;
-                        transform: rotate(-45deg);
-                    }
-                }
-            }
-            h1{
-                font-size: 1.2rem;
-                color: white;
-                font-weight: 600;
-                padding: 10px;
-            }
-            p{
-                font-size: 0.8rem;
-                color: white;
-                font-weight: 400;
-            }
+        i {
+          color: red;
+          font-size: 1.8rem;
+          padding: 15px;
+          transition: all 0.5s ease;
         }
+
+        &:hover {
+          background: red;
+          transform: rotate(45deg) scale(0.8);
+
+          i {
+            color: white;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+      h1 {
+        font-size: 1.2rem;
+        color: white;
+        font-weight: 600;
+        padding: 10px;
+      }
+      p {
+        font-size: 0.8rem;
+        color: white;
+        font-weight: 400;
+      }
     }
+  }
 }

@@ -1,74 +1,77 @@
-.contact-section{
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5)), url('../img/contacts.jpg') no-repeat center center / cover;
-    position: relative;
+.contact-section {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5)),
+    url("../img/contacts.jpg") no-repeat center center / cover;
+  position: relative;
 
-    .contacts{
-        height: 90vh;
-        max-width: 100%;
-        @include flexDisplay(center,space-around,row);
-        flex-wrap: wrap;
-        // margin: 0 50px;
+  .contacts {
+    height: 90vh;
+    max-width: 100%;
+    @include flexDisplay(center, space-around, row);
+    flex-wrap: wrap;
+    // margin: 0 50px;
 
-        .item{
-            @include flexDisplay(center,start,row);
-            column-gap: 10px;
-            max-width: 100%;
-            margin-bottom: 15px;
-            
-            i{
-                color: black;
-                background: red;
-                font-size: 1.3rem;
-                padding: 10px;
-                border-radius: 50%;
-            }
-            p{
-                color: white;
-                font-size: 1.2rem;
-                cursor: pointer;
-                transition: all .2s ease;
+    .item {
+      @include flexDisplay(center, start, row);
+      column-gap: 10px;
+      max-width: 100%;
+      margin-bottom: 15px;
 
-                &:hover{
-                    transform: scale(.9);
-                }
-            }
+      i {
+        color: black;
+        background: red;
+        font-size: 1.3rem;
+        padding: 10px;
+        border-radius: 50%;
+      }
+      p {
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          transform: scale(0.9);
         }
-
-        .contact-form{
-            @include flexDisplay(center,center,row);
-
-            form{
-                @include flexDisplay(center,start,column);
-                flex-wrap: wrap;
-
-                input[type="email"], input[type="text"], textarea{
-                    width: 100%;
-                    border: white solid 1px;
-                    background: black;
-                    padding: 10px 20px;
-                    margin: 10px;
-                    color: white;
-                }
-                textarea{
-                    resize: vertical;
-                    height: 200px;
-                }
-                input[type="submit"]{
-                    width: 100%;
-                    height: 30px;
-                    background: black;
-                    color: white;
-                    border: solid 2px black;
-                    cursor: pointer;
-                    transition: all .3s ease-in;
-
-                    &:hover{
-                        background: none;
-                        color: white;
-                    }
-                }
-            }
-        }
+      }
     }
+
+    .contact-form {
+      @include flexDisplay(center, center, row);
+
+      form {
+        @include flexDisplay(center, start, column);
+        flex-wrap: wrap;
+
+        input[type="email"],
+        input[type="text"],
+        textarea {
+          width: 100%;
+          border: white solid 1px;
+          background: black;
+          padding: 10px 20px;
+          margin: 10px;
+          color: white;
+        }
+        textarea {
+          resize: vertical;
+          height: 200px;
+        }
+        input[type="submit"] {
+          width: 100%;
+          height: 30px;
+          background: black;
+          color: white;
+          border: solid 2px black;
+          cursor: pointer;
+          transition: all 0.3s ease-in;
+
+          &:hover {
+            background: none;
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }

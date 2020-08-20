@@ -1,160 +1,240 @@
 
-@import 'variables';
-@import 'header';
-@import 'about';
-@import 'services';
-@import 'contact';
-@import 'footer';
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+@import "variables";
+@import "header";
+@import "about";
+@import "services";
+@import "contact";
+@import "footer";
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
+}
+body{
+  overflow-x: hidden;
 }
 
 //Utilities
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-li{
-    list-style: none;
-}
-
-img{
-    width: 100%;
-    height: 100%;
-}
-.section-title{
-    text-align: center;
-    color: white;
-    text-transform: uppercase;
-    margin-top: 30px;
-    font-size: 1.5rem;
-    text-decoration: underline;
+li {
+  list-style: none;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+}
+.section-title {
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 30px;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
 
 //Code Start
-.main{
-    height: 100vh;
+.main {
+  height: 100vh;
 
-    display: grid;
-    grid-auto-rows: 1fr;
+  display: grid;
+  grid-auto-rows: 1fr;
 }
 
-@media (max-width:500px){
-    // Start Header
-.header{
-    @include widthHeight(100%,100px);
+@media (max-width: 600px) {
+  // Start Header
+  .header {
+    @include widthHeight(100%, 100px);
     position: fixed;
     margin: 0;
     transition: all 1s ease;
     z-index: 2;
 
-    @include flexDisplay(center,space-around,row);
+    @include flexDisplay(center, space-around, row);
 
-    .mylogo{
-        @include widthHeight(80px,80px);
+    .mylogo {
+      @include widthHeight(80px, 80px);
     }
-    .toggle-btn{
-        display: block;
-        cursor: pointer;
+    .toggle-btn {
+      display: block;
+      cursor: pointer;
 
-        span{
-            color: white;
+      span {
+        color: white;
+      }
+    }
+    .menu {
+      height: auto;
+      width: 100%;
+      position: absolute;
+      margin-top: 250px;
+      justify-content: center;
+      flex-direction: column;
+      background: red;
+      transform: scale(1, 0);
+      transition: transform 0.5s;
+
+      a {
+        margin: 10px;
+        font-size: 0.9rem;
+
+        @include flexDisplay(center, center, column);
+
+        &::after {
+          background: black;
         }
-    }
-    .menu{
-        height: auto;
-        width: 100%;
-        position: absolute;
-        margin-top: 123px;
-        justify-content: center;
-        flex-direction: column;
-        background: red;
-        transform: scale(1,0);
-        transition: transform 0.5s;
-
-        a{
-            margin: 10px;
-            font-size: 0.9rem;
-
-            @include flexDisplay(center,center,column);
-
-            &::after{
-                background: black;
-            }
-            &:hover::after{
-                transform: scale(1);
-            }
+        &:hover::after {
+          transform: scale(1);
         }
+      }
     }
-    .menu.showMenu{
-        transform: scale(1);
-    }
-}
-
-.header.startScroll{
-    @include widthHeight(100%,60px);
-    background: white;
-
-    .mylogo{
-        width: 70px;
-        height: 70px;
-    }
-    .toggle-btn{
-
-        span{
-            color: black;
-        }
-    }
-    .menu{
-        @include flexDisplay(center,center,row);
-        margin-top: 45px;
-
-        a{
-            color: white;
-
-            @include flexDisplay(center,center,column);
-
-            &::after{
-                content: '';
-                @include widthHeight(100%,3px);
-                background: black;
-                transform: scale(0,1);
-                transition: all .4s ease;
-            }
-            &:hover::after{
-                transform: scale(1);
-            }
-        }
-    }
-}
-// End Of Header
-
-// Start Of Landing Page
-.landing-page{
-
-    .intro-text{
-        h1{
-            font-size: 1.3rem;
-        }
-    }
-    
-    .scroll-btn{
-        display: none;
+    .menu.showMenu {
+      transform: scale(1);
     }
   }
+
+  .header.startScroll {
+    @include widthHeight(100%, 60px);
+    background: white;
+
+    .mylogo {
+      width: 70px;
+      height: 70px;
+    }
+    .toggle-btn {
+      span {
+        color: black;
+      }
+    }
+    .menu {
+      @include flexDisplay(center, center, row);
+      margin-top: 90px;
+
+      a {
+        color: white;
+
+        @include flexDisplay(center, center, column);
+
+        &::after {
+          content: "";
+          @include widthHeight(100%, 3px);
+          background: black;
+          transform: scale(0, 1);
+          transition: all 0.4s ease;
+        }
+        &:hover::after {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+  // End Of Header
+
+  // Start Of Landing Page
+  .landing-page {
+    .intro-text {
+      h1 {
+        font-size: 1.3rem;
+      }
+    }
+
+    .scroll-btn {
+      display: none;
+    }
+  }
+  //End OF Landing page
+  .about-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.9)),
+      url("../img/aboutme.jpg") no-repeat center center / cover;
+  
+    .section-title {
+      text-align: center;
+      color: white;
+      text-transform: uppercase;
+      margin-top: 30px;
+      font-size: 1.5rem;
+      text-decoration: underline;
+    }
+  
+    .about-container {
+      @include widthHeight(100%, 80vh);
+      // margin: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-flow: row wrap;
+  
+      .about-image {
+        width: 250px;
+        height: auto;
+  
+        //for animation
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(200px);
+        transition: all 1s ease;
+      }
+      .about-image.showDownUp {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateX(0);
+      }
+      .about-content {
+        color: $secondary-color;
+        text-align: center;
+  
+        //for animation (up to down)
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-150px);
+        transition: all 1s ease;
+  
+        h1 {
+          text-align: center;
+          line-height: 80px;
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1rem;
+          font-weight: 400;
+          margin-bottom: 30px;
+        }
+        a {
+          color: white;
+          border: solid 1px red;
+          padding: 10px 20px;
+          border-radius: 15px;
+          transition: all 0.3s linear;
+  
+          &:hover {
+            background: $primary-color;
+          }
+        }
+      }
+      .about-content.showUpDown {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateX(0);
+      }
+    }
+  }
+  .services-section{
+    display: none;
+  }
+  .contact-section{
+    display: none;
+  }
+  .footer{
+    display: none;
+  }
 }
-
-
-
-
-
