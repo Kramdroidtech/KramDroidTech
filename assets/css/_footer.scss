@@ -14,7 +14,10 @@
       margin-bottom: 5px;
     }
     .social-icons {
-      @include flexDisplay(start, space-around, row);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: row wrap;
       margin-top: 20px;
       i {
         color: white;

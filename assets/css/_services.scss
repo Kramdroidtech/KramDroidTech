@@ -1,14 +1,15 @@
 .services-section {
-  @include widthHeight(100%, 60vh);
+  @include widthHeight(100%, auto);
   background: #222;
-  overflow: hidden;
 
   .all-services {
     width: 80%;
     margin: 0 auto;
-    overflow-x: hidden;
-    @include flexDisplay(start, center, row);
-    flex-wrap: no-wrap;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
 
     .services {
       width: 220px;
