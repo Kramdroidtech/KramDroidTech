@@ -51,14 +51,6 @@ img {
 @media (max-width: 630px) {
   // Start Header
   .header {
-    @include widthHeight(100%, 100px);
-    position: fixed;
-    margin: 0;
-    transition: all 1s ease;
-    z-index: 2;
-
-    @include flexDisplay(center, space-around, row);
-
     .mylogo {
       @include widthHeight(80px, 80px);
     }
