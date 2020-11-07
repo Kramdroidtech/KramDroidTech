@@ -1,6 +1,7 @@
 .services-section {
   @include widthHeight(100%, auto);
   background: #222;
+  overflow: hidden;
 
   .all-services {
     width: 80%;

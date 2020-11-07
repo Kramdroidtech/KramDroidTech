@@ -261,6 +261,7 @@
   height: 100vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9))), url("../img/aboutme.jpg") no-repeat center center/cover;
   background: linear-gradient(rgba(0, 0, 0, 0.9)), url("../img/aboutme.jpg") no-repeat center center/cover;
+  overflow: hidden;
 }
 
 .about-section .section-title {
@@ -354,6 +355,7 @@
   width: 100%;
   height: auto;
   background: #222;
+  overflow: hidden;
 }
 
 .services-section .all-services {
@@ -459,6 +461,7 @@
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url("../img/contacts.jpg") no-repeat center center/cover;
   background: linear-gradient(rgba(0, 0, 0, 0.5)), url("../img/contacts.jpg") no-repeat center center/cover;
   position: relative;
+  overflow: hidden;
 }
 
 .contact-section .contacts {
@@ -598,6 +601,7 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  overflow: hidden;
 }
 
 .footer .item {
