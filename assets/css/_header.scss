@@ -1,152 +1,153 @@
 // Start Header
-.header{
-    @include widthHeight(100%,100px);
-    position: fixed;
-    margin: 0;
-    transition: all 1s ease;
-    z-index: 2;
+.header {
+  @include widthHeight(100%, 100px);
+  position: fixed;
+  margin: 0;
+  transition: all 1s ease;
+  z-index: 2;
 
-    @include flexDisplay(center,space-around,row);
+  @include flexDisplay(center, space-evenly, row);
 
-    .mylogo{
-        @include widthHeight(80px,80px);
+  .mylogo {
+    @include widthHeight(80px, 80px);
+  }
+  .toggle-btn {
+    display: none;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-left: 30px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 0.7em;
+      color: white;
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+      @include flexDisplay(center, center, column);
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: red;
+        transform: scale(0, 1);
+        transition: all 0.4s ease;
+      }
+      &:hover::after {
+        transform: scale(1);
+      }
     }
-    .toggle-btn{
-        display: none;
-    }
-    .menu{
-        display: flex;
-        align-items: center;
-
-        a{
-            margin-left: 30px;
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 0.7em;
-            color: white;
-            transition: all .2s ease;
-            cursor: pointer;
-
-            @include flexDisplay(center,center,column);
-
-            &::after{
-                content: '';
-                width: 100%;
-                height: 3px;
-                background: red;
-                transform: scale(0,1);
-                transition: all .4s ease;
-            }
-            &:hover::after{
-                transform: scale(1);
-            }
-        }
-    }
+  }
 }
 
-.header.startScroll{
-    @include widthHeight(100%,60px);
-    background: white;
+.header.startScroll {
+  @include widthHeight(100%, 60px);
+  background: white;
 
-    .mylogo{
-        width: 70px;
-        height: 70px;
+  .mylogo {
+    width: 70px;
+    height: 70px;
+  }
+  .menu {
+    @include flexDisplay(center, center, row);
+
+    a {
+      margin-left: 30px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 0.6em;
+      color: black;
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+      @include flexDisplay(center, center, column);
+
+      &::after {
+        content: "";
+        @include widthHeight(100%, 3px);
+        background: red;
+        transform: scale(0, 1);
+        transition: all 0.4s ease;
+      }
+      &:hover::after {
+        transform: scale(1);
+      }
     }
-    .menu{
-        @include flexDisplay(center,center,row);
-
-        a{
-            margin-left: 30px;
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 0.6em;
-            color: black;
-            transition: all .2s ease;
-            cursor: pointer;
-
-            @include flexDisplay(center,center,column);
-
-            &::after{
-                content: '';
-                @include widthHeight(100%,3px);
-                background: red;
-                transform: scale(0,1);
-                transition: all .4s ease;
-            }
-            &:hover::after{
-                transform: scale(1);
-            }
-        }
-    }
+  }
 }
 // End Of Header
 
 // Start Of Landing Page
-.landing-page{
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.8)) ,url('../img/KRAMDROID.jpg') no-repeat center center / cover;
-    line-height: 40px;
+.landing-page {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.8)),
+    url("../img/KRAMDROID.jpg") no-repeat center center / cover;
+  line-height: 40px;
+  overflow: hidden;
 
-    @include flexDisplay(center,center,row);
+  @include flexDisplay(center, center, row);
 
-    .introText{
-        margin-left: 30px;
-        flex: 1;
+  .introText {
+    margin-left: 30px;
+    flex: 1;
 
-        h1{
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 400;
+    h1 {
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 400;
 
-            span{
-                color: red;
-            }
-        }
-        h2{
-            color: white;
-            font-weight: 400;
-            font-size: 1.5rem;
-        }
-        a{
-            color: white;
-            border: solid 1px red;
-            margin-top: 20px;
-            padding: 10px 20px;
-            border-radius: 15px;
-            transition: all .3s linear;
-
-            &:hover{
-                background: red;
-            }
-        }
+      span {
+        color: red;
+      }
     }
-
-    .scroll-btn{
-        flex: 1;
-        align-self: flex-end;
-        position: relative;
-
-        .scroll{
-            position: absolute;
-            bottom: 20px;
-
-            i{
-                color: red;
-                font-size: 2rem;
-                background: white;
-                border-radius: 50%;
-                animation: updown 0.5s infinite;
-                
-
-                @keyframes updown{
-                    from{
-                        transform: translateY(1);
-                    }
-                    to{
-                        transform: translateY(-10px);
-                    }
-                }
-            }
-        }
+    h2 {
+      color: white;
+      font-weight: 400;
+      font-size: 1.5rem;
     }
+    a {
+      color: white;
+      border: solid 1px red;
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 15px;
+      transition: all 0.3s linear;
+
+      &:hover {
+        background: red;
+      }
+    }
+  }
+
+  .scroll-btn {
+    flex: 1;
+    align-self: flex-end;
+    position: relative;
+
+    .scroll {
+      position: absolute;
+      bottom: 20px;
+
+      i {
+        color: red;
+        font-size: 2rem;
+        background: white;
+        border-radius: 50%;
+        animation: updown 0.5s infinite;
+
+        @keyframes updown {
+          from {
+            transform: translateY(1);
+          }
+          to {
+            transform: translateY(-10px);
+          }
+        }
+      }
+    }
+  }
 }

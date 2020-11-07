@@ -6,10 +6,9 @@
 
   .contacts {
     height: 90vh;
-    max-width: 100%;
+    width: 90%;
     @include flexDisplay(center, space-around, row);
     flex-wrap: wrap;
-    // margin: 0 50px;
 
     .item {
       @include flexDisplay(center, start, row);
