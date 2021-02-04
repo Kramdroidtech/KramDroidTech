@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-grey: #948c80;
+  --clr-maroon: #632f30;
+  --clr-red: #d01110;
+  --clr-blue: #a2d3e9;
+  --clr-white: #ffff;
+}
+
+/* ::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-blue);
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--clr-red);
+  border-radius: 20px;
+  cursor: pointer;
+} */
+
+body {
+  font-family: "Lemonada", cursive;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: url("./img/KRAMDROID.jpg") no-repeat center center/cover;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: multiply;
+  color: white;
+}
+
+.main .tab-container {
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+}
+
+.home-tab-wrapper,
+.about-tab-wrapper,
+.contact-tab-wrapper {
+  display: none;
+}
+.active {
+  display: block;
+}
+
+.main .tab-container .home-tab-wrapper img {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  background: #222;
+  animation: circularMove 5s infinite linear;
+  cursor: pointer;
+}
+.main .tab-container .home-tab-wrapper .line-1 {
+  width: 3px;
+  height: 111px;
+  background: white;
+  position: absolute;
+  top: -105px;
+  left: 30px;
+  animation: line1-animation 0.5s ease forwards;
+}
+@keyframes line1-animation {
+  from {
+    top: -105px;
+  }
+  to {
+    top: 140px;
+  }
+}
+.main .tab-container .home-tab-wrapper .line-2 {
+  width: 180px;
+  height: 3px;
+  background: white;
+  position: relative;
+  top: 105px;
+  left: -180px;
+  animation: line2-animation 0.5s ease forwards;
+}
+@keyframes line2-animation {
+  from {
+    left: -180px;
+  }
+  to {
+    left: 25px;
+  }
+}
+.main .tab-container .home-tab-wrapper h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 400;
+}
+.main .tab-container .home-tab-wrapper h1 span {
+  color: var(--clr-red);
+}
+.main .tab-container .home-tab-wrapper p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  width: 80%;
+  position: relative;
+  left: 40px;
+  word-spacing: 5px;
+}
+
+@keyframes circularMove {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main .footer-container {
+  width: 100%;
+  height: 10%;
+  background: var(--clr-red);
+}
+.main .footer-container .footer-buttons {
+  width: 100%;
+  height: 100%;
+
+  /* LAYOUT */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.main .footer-container .footer-buttons li {
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+.main .footer-container .footer-buttons li i {
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+/* MOBILE */
+@media screen and (max-width: 253px) {
+  .main {
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 254px) and (max-width: 500px) {
+  .main {
+    display: none;
+  }
+}
